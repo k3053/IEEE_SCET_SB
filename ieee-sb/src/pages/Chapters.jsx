@@ -1,36 +1,47 @@
-import React, { useState } from 'react';
-import Card from '../components/Card';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Card from "../components/Card";
+import CS_logo from "../assets/CS_logo.jpg";
+import WIE_logo from "../assets/WIE_logo.jpg";
+import VTS_logo from "../assets/VTS_logo.jpg";
+import SPS_logo from "../assets/SPS_logo.jpg";
+import SIGHT_logo from "../assets/SIGHT_logo.jpg";
 
 const chapters = [
   {
     name: "Computer Society (CS)",
     color: "#f43f5e",
-    details: "Dive into the world of software development, Artificial Intelligence, and computing innovations. Perfect for coders and developers looking to stay ahead of the curve.",
-    logo: "CS_logo.jpg"
+    details:
+      "Dive into the world of software development, Artificial Intelligence, and computing innovations. Perfect for coders and developers looking to stay ahead of the curve.",
+    logo: CS_logo,
   },
   {
     name: "Women in Engineering (WIE)",
-    color: "#3b82f6",
-    details: "A powerful platform promoting inclusion and leadership. Open to all genders, WIE empowers students through initiatives like 'She Connects' and leadership summits.",
-    logo: "WIE_logo.jpg"
+    color: "#a855f7",
+    details:
+      "A powerful platform promoting inclusion and leadership. Open to all genders, WIE empowers students through initiatives like leadership summits and mentoring programs.",
+    logo: WIE_logo,
   },
   {
     name: "Vehicular Technology Society (VTS)",
     color: "#22c55e",
-    details: "Dedicated to the future of mobility, including autonomous systems, electric vehicles (EVs), and intelligent transportation technologies.",
-    logo: "VTS_logo.jpg"
+    details:
+      "Dedicated to the future of mobility, including autonomous systems, electric vehicles (EVs), and intelligent transportation technologies.",
+    logo: VTS_logo,
   },
   {
     name: "Signal Processing Society (SPS)",
-    color: "#a855f7",
-    details: "Explore the cutting edge of AI, robotics, and advanced signal/image processing.",
-    logo: "SPS_logo.jpg"
+    color: "#3b82f6",
+    details:
+      "Explore the cutting edge of AI, robotics, and advanced signal and image processing.",
+    logo: SPS_logo,
   },
   {
-    name: "Special Interest Group on Humanitarian Technology (SIGHT)",
+    name: "SIGHT",
     color: "#f59e0b",
-    details: "Leverage technology for social good. SIGHT focuses on solving real-world humanitarian challenges.",
-    logo: "SIGHT_logo.jpg"
+    details:
+      "Leverage technology for social good. SIGHT focuses on solving real-world humanitarian challenges.",
+    logo: SIGHT_logo,
   },
 ];
 
@@ -38,26 +49,53 @@ const Chapters = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="container mx-auto mt-10 px-4">
-      <h1 className="text-3xl font-bold mb-8">
-        IEEE SCET SB Chapters
-      </h1>
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/60 to-white py-20 px-6">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Page Title */}
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-bold mb-14 text-center text-blue-700"
+      >
+        IEEE SCET SB Chapters
+      </motion.h1>
+
+      {/* Grid */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.15 },
+          },
+        }}
+        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {chapters.map((chapter, index) => (
-          <Card
+          <motion.div
             key={index}
-            color={chapter.color}
-            title="IEEE SCET SB"
-            subtitle={chapter.name}
-            details={chapter.details}
-            logo={chapter.logo}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            isBlurred={hoveredIndex !== null && hoveredIndex !== index}
-          />
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card
+              color={chapter.color}
+              title="IEEE SCET SB"
+              subtitle={chapter.name}
+              details={chapter.details}
+              logo={chapter.logo}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              isBlurred={hoveredIndex !== null && hoveredIndex !== index}
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
