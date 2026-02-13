@@ -1,11 +1,12 @@
-import React from 'react';
-
-import SocialMediaLink from '../components/SocialMediaLink';
+import React from "react";
+import SocialMediaLink from "../components/SocialMediaLink";
 
 const Footer = () => {
-    return (
-        <footer className="bg-blue-600 text-white py-8 mt-10">
-            <style>{`
+  return (
+    <footer className="bg-blue-600 text-white py-14 mt-10">
+
+      {/* ===== KEEPING YOUR SVG EFFECT CSS EXACTLY SAME ===== */}
+      <style>{`
         .svg {
           transition: all 0.3s;
           padding: 1rem;
@@ -54,34 +55,88 @@ const Footer = () => {
                       0 5px 5px rgba(0, 0, 0, 0.164);
         }
 
-        .iso-pro:hover span:nth-child(1) {
-          opacity: 0.2;
-        }
-
+        .iso-pro:hover span:nth-child(1) { opacity: 0.2; }
         .iso-pro:hover span:nth-child(2) {
           opacity: 0.4;
           transform: translate(5px, -5px);
         }
-
         .iso-pro:hover span:nth-child(3) {
           opacity: 0.6;
           transform: translate(10px, -10px);
         }
       `}</style>
 
-            <div className="container mx-auto px-4">
-                <h2 className="text-2xl font-bold text-center mb-6">Contact Us</h2>
-                <div className="text-center mb-6">
-                    <p className="text-lg">Get in touch with IEEE SCET SB</p>
-                    <p className="text-sm mt-2">
-                        Follow us on our social media platforms for updates and announcements
-                    </p>
-                </div>
+      <div className="max-w-7xl mx-auto px-6">
 
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-                    {/* Social Media Links - now horizontal */}
-                    <ul className="flex flex-row gap-6 justify-center flex-wrap">
-                        <SocialMediaLink
+        {/* ================= TOP GRID ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
+          {/* About */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">IEEE SCET SB</h3>
+            <p className="text-sm text-blue-100 leading-relaxed">
+              Empowering innovation, leadership, and technical excellence
+              through global IEEE initiatives and student-driven activities.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="/" className="hover:underline">Home</a></li>
+              <li><a href="/about" className="hover:underline">About</a></li>
+              <li><a href="/chapters" className="hover:underline">Chapters</a></li>
+              <li><a href="/events" className="hover:underline">Events</a></li>
+            </ul>
+          </div>
+
+          {/* Chapters */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Our Chapters</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="/chapters/cs" className="hover:underline">Computer Society</a></li>
+              <li><a href="/chapters/wie" className="hover:underline">WIE</a></li>
+              <li><a href="/chapters/vts" className="hover:underline">VTS</a></li>
+              <li><a href="/chapters/sps" className="hover:underline">SPS</a></li>
+              <li><a href="/chapters/sight" className="hover:underline">SIGHT</a></li>
+            </ul>
+          </div>
+
+          {/* Search */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Search</h3>
+            <div className="flex">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full px-3 py-2 rounded-l-md text-black focus:outline-none"
+              />
+              <button className="bg-white text-blue-600 px-4 rounded-r-md font-semibold hover:bg-gray-200 transition">
+                Go
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ================= CONTACT SECTION ================= */}
+        <div className="border-t border-blue-400 pt-12">
+
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold">Contact Us</h2>
+            <p className="text-lg mt-3">Get in touch with IEEE SCET SB</p>
+            <p className="text-sm mt-2 text-blue-100">
+              Follow us on our social media platforms for updates and announcements
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Social Media */}
+            <div className="flex justify-center lg:justify-start">
+              <ul className="flex flex-wrap gap-6 justify-center">
+                 <SocialMediaLink
                             name="Facebook"
                             url="https://www.facebook.com/ieee.scet.sb/"
                             iconPath="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
@@ -105,24 +160,35 @@ const Footer = () => {
                             iconPath="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-8.1 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7z"
                             viewBox="0 0 512 512"
                         />
-                    </ul>
 
-                    {/* Map */}
-                    <div className="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.242062341308!2d72.80581762526087!3d21.182540930505564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e771bf220d9%3A0xbdd1676277c8bb1!2sSarvajanik%20College%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1769513449982!5m2!1sen!2sin"
-                            width="500"
-                            height="350"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    </div>
-                </div>
+              </ul>
             </div>
-        </footer>
-    );
+
+            {/* Map */}
+            <div className="flex justify-center lg:justify-end">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.242062341308!2d72.80581762526087!3d21.182540930505564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e771bf220d9%3A0xbdd1676277c8bb1!2sSarvajanik%20College%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1769513449982!5m2!1sen!2sin"
+                width="100%"
+                height="320"
+                className="rounded-lg shadow-lg max-w-md"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* ================= BOTTOM ================= */}
+        <div className="border-t border-blue-400 mt-12 pt-6 text-center text-sm text-blue-200">
+          © {new Date().getFullYear()} IEEE SCET Student Branch. All rights reserved.
+        </div>
+
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

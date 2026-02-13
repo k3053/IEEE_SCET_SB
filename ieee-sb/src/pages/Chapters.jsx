@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import CS_logo from "../assets/CS_logo.jpg";
 import WIE_logo from "../assets/WIE_logo.jpg";
@@ -12,46 +13,51 @@ const chapters = [
     name: "Computer Society (CS)",
     color: "#f43f5e",
     details:
-      "Dive into the world of software development, Artificial Intelligence, and computing innovations. Perfect for coders and developers looking to stay ahead of the curve.",
+      "Dive into the world of software development, Artificial Intelligence, and computing innovations.",
     logo: CS_logo,
+    link: "/chapters/cs",
   },
   {
     name: "Women in Engineering (WIE)",
     color: "#a855f7",
     details:
-      "A powerful platform promoting inclusion and leadership. Open to all genders, WIE empowers students through initiatives like leadership summits and mentoring programs.",
+      "Promoting inclusion and leadership through technical initiatives and mentoring.",
     logo: WIE_logo,
+    link: "/chapters/wie",
   },
   {
     name: "Vehicular Technology Society (VTS)",
     color: "#22c55e",
     details:
-      "Dedicated to the future of mobility, including autonomous systems, electric vehicles (EVs), and intelligent transportation technologies.",
+      "Focused on autonomous systems, EVs, and intelligent transportation technologies.",
     logo: VTS_logo,
+    link: "/chapters/vts",
   },
   {
     name: "Signal Processing Society (SPS)",
     color: "#3b82f6",
     details:
-      "Explore the cutting edge of AI, robotics, and advanced signal and image processing.",
+      "Explore AI, robotics, and advanced signal & image processing.",
     logo: SPS_logo,
+    link: "/chapters/sps",
   },
   {
     name: "SIGHT",
     color: "#f59e0b",
     details:
-      "Leverage technology for social good. SIGHT focuses on solving real-world humanitarian challenges.",
+      "Leveraging technology to solve humanitarian challenges.",
     logo: SIGHT_logo,
+    link: "/chapters/sight",
   },
 ];
 
 const Chapters = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/60 to-white py-20 px-6">
 
-      {/* Page Title */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -61,16 +67,13 @@ const Chapters = () => {
         IEEE SCET SB Chapters
       </motion.h1>
 
-      {/* Grid */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{
           hidden: {},
-          visible: {
-            transition: { staggerChildren: 0.15 },
-          },
+          visible: { transition: { staggerChildren: 0.15 } },
         }}
         className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
       >
@@ -82,6 +85,8 @@ const Chapters = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5 }}
+            className="cursor-pointer"
+            onClick={() => navigate(chapter.link)}
           >
             <Card
               color={chapter.color}

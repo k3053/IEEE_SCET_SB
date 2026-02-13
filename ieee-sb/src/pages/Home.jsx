@@ -254,8 +254,8 @@ const Home = () => {
       </section>
 
 
-      {/* ================= UPCOMING EVENTS ================= */}
-      <section className="py-24 px-6 md:px-16">
+      {/* ================= PAST EVENTS ================= */}
+      <section className="py-24 px-6 md:px-16 bg-blue-50">
         <div className="max-w-7xl mx-auto text-center">
 
           <motion.h2
@@ -265,29 +265,26 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold text-blue-700 mb-16"
           >
-            Upcoming Events
+            Past Events
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-10">
 
             {[
               {
-                title: "AI & ML Workshop",
-                date: "March 2026",
-                desc: "Hands-on session covering real-world AI applications.",
-                // image: event1,
+                title: "AI & ML Bootcamp",
+                date: "January 2026",
+                desc: "Successfully conducted a 3-day hands-on bootcamp with 150+ participants.",
               },
               {
-                title: "Annual Hackathon",
-                date: "April 2026",
-                desc: "24-hour coding challenge with exciting prizes.",
-                // image: event2,
+                title: "National Level Hackathon",
+                date: "December 2025",
+                desc: "Hosted a 24-hour hackathon with teams from multiple universities.",
               },
               {
-                title: "Industry Talk Series",
-                date: "May 2026",
-                desc: "Insights from top industry professionals.",
-                // image: event3,
+                title: "Industry Expert Talk",
+                date: "November 2025",
+                desc: "Invited industry leaders to share insights on emerging technologies.",
               },
             ].map((event, index) => (
               <motion.div
@@ -297,42 +294,76 @@ const Home = () => {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.03 }}
-                className="bg-white/60 backdrop-blur-md rounded-2xl border border-white/40 shadow-sm overflow-hidden"
+                className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 p-8 text-left border border-gray-100"
               >
 
-                {/* EVENT POSTER */}
-                <div className="overflow-hidden relative">
-                  <motion.img
-                    src={event.image}
-                    alt={event.title}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                    className="w-full h-56 object-cover"
-                  />
-
-                  {/* Optional Date Badge */}
-                  <div className="absolute top-4 left-4 bg-blue-700 text-white px-4 py-1 rounded-full text-sm">
-                    {event.date}
-                  </div>
+                <div className="mb-4 text-sm text-blue-600 font-medium">
+                  {event.date}
                 </div>
 
-                {/* CONTENT */}
-                <div className="p-8 text-left">
-                  <h3 className="text-2xl font-semibold text-blue-700 mb-3">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-600">{event.desc}</p>
-                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-3">
+                  {event.title}
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed">
+                  {event.desc}
+                </p>
 
               </motion.div>
             ))}
-
 
           </div>
 
         </div>
       </section>
 
+      {/* ================= PAST ACHIEVEMENTS ================= */}
+      <section className="py-24 px-6 md:px-16 bg-blue-50">
+        <div className="max-w-7xl mx-auto text-center">
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-blue-700 mb-16"
+          >
+            Our Achievements
+          </motion.h2>
+
+          <div className="grid md:grid-cols-4 gap-10">
+
+            {[
+              { number: "1500+", label: "Active Members" },
+              { number: "50+", label: "Technical Events Conducted" },
+              { number: "20+", label: "Industry Collaborations" },
+              { number: "10+", label: "National Recognitions" },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 p-10"
+              >
+
+                <h3 className="text-4xl font-bold text-blue-700 mb-4">
+                  {item.number}
+                </h3>
+
+                <p className="text-gray-600 text-lg">
+                  {item.label}
+                </p>
+
+              </motion.div>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
 
       {/* ================= NEXT SECTION =================
       <section className="min-h-screen bg-gray-100 flex items-center justify-center">
