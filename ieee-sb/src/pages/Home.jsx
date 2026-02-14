@@ -81,7 +81,7 @@ const Home = () => {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-bold text-blue-700 mb-6"
           >
-            Why You Should Join IEEE SCET SB?
+            Why You Should Join IEEE SCET SB!
           </motion.h2>
 
           <motion.p

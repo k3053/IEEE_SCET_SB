@@ -7,25 +7,25 @@ const csMembersData = [
     name: "Aryan Sariya",
     role: "Chair - IEEE CS Chapter",
     department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/Cs/C1.jpg",
   },
   {
     name: "Avani Deshpande",
     role: "Vice Chair - IEEE CS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/Cs/C2.jpg",
   },
   {
     name: "Jainim Jariwala",
     role: "Secretary - IEEE CS Chapter",
     department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/Cs/C3.jpg",
   },
   {
     name: "Miqdad Indori",
     role: "Treasurer - IEEE CS Chapter",
     department: "Artificial Intelligence & Data Science",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/Cs/C4.jpg",
   },
 ];
 

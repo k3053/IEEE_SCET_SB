@@ -7,31 +7,31 @@ const vtsMembersData = [
     name: "Anika Mehta",
     role: "Chair - IEEE VTS Chapter",
     department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/VTS/V1.jpg",
   },
   {
     name: "Vir Gupta",
     role: "Vice Chair - IEEE VTS Chapter",
     department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/VTS/V2.jpg",
   },
   {
     name: "Dhayeya Gandhi",
     role: "Secretary - IEEE VTS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/VTS/V3.jpg",
   },
   {
     name: "Sahil Ariwala",
     role: "Joint Secretary - IEEE VTS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/VTS/V4.jpg",
   },
   {
     name: "Shristi Shah",
     role: "Treasurer - IEEE VTS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/VTS/V5.jpg",
   },
 ];
 

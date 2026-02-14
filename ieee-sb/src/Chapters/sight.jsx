@@ -7,13 +7,13 @@ const sightMembersData = [
     name: "Jaynee Chokshy",
     role: "Chair - IEEE SIGHT Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SIGHT/SI1.jpg",
   },
   {
     name: "Shariks Thusoo",
     role: "Vice Chair - IEEE SIGHT Chapter",
     department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SIGHT/SI2.jpg",
   },
   {
     name: "Pakzaad Karanjjia",
@@ -25,7 +25,7 @@ const sightMembersData = [
     name: "Krish Kambhati",
     role: "Treasurer - IEEE SIGHT Chapter",
     department: "Information Technology",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SIGHT/SI4.jpg",
   },
 ];
 

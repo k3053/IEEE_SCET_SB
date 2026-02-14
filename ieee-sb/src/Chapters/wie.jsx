@@ -7,31 +7,31 @@ const wieMembersData = [
     name: "Dev Patel",
     role: "Chair - IEEE WIE AG",
     department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/WIE/W1.jpg",
   },
   {
     name: "Hita Jadav",
     role: "Vice Chair - IEEE WIE AG",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/WIE/W2.jpg",
   },
   {
     name: "Shristi Shah",
     role: "Secretary - IEEE WIE AG",
-    department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    department: "Electronics & Communication",
+    image: "/src/assets/Members/WIE/W3.jpg",
   },
   {
     name: "Sharika Thusoo",
     role: "Joint Secretary - IEEE WIE AG",
     department: "Computer Engineering",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/WIE/W4.jpg",
   },
   {
     name: "Dhayeya Gandhi",
     role: "Treasurer - IEEE WIE AG",
-    department: "Artificial Intelligence & Data Science",
-    image: "/src/assets/SB_logo.png",
+    department: "Electronics & Communication",
+    image: "/src/assets/Members/WIE/W5.jpg",
   },
 ];
 

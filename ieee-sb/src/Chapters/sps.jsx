@@ -7,31 +7,31 @@ const spsMembersData = [
     name: "Riddhi Kapadia",
     role: "Chair - IEEE SPS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SPS/S1.jpg",
   },
   {
     name: "Dhwanil Doshi",
     role: "Vice Chair - IEEE SPS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SPS/S2.jpg",
   },
   {
     name: "Chharvvi Batra",
     role: "Secretary - IEEE SPS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SPS/S3.jpg",
   },
   {
     name: "Vatsal Patel",
     role: "Treasurer - IEEE SPS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SPS/S4.jpg",
   },
   {
     name: "Dhwani K. Baruwala",
     role: "Treasurer - IEEE SPS Chapter",
     department: "Electronics & Communication",
-    image: "/src/assets/SB_logo.png",
+    image: "/src/assets/Members/SPS/S5.jpg",
   },
 ];
 
