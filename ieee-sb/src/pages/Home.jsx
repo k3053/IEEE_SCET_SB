@@ -1,9 +1,11 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import banner from "../assets/banner.jpeg";
 
 const Home = () => {
   const { scrollY } = useScroll();
+  const navigate = useNavigate();
 
   // Smooth parallax movement (less aggressive to avoid gaps)
   const y = useTransform(scrollY, [0, 600], [0, -100]);
@@ -47,7 +49,7 @@ const Home = () => {
               Join Now
             </button>
 
-            <button className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-700 transition duration-300">
+            <button className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-700 transition duration-300" onClick={() => navigate("/chapters")}>
               Explore Chapters
             </button>
           </div>
