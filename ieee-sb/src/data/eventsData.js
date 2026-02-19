@@ -35,6 +35,7 @@ export const eventsData = [
     id: 3,
     title: "Webinar on AI Ethics",
     section: "webinar",
+    tagline: "Ethical AI Systems",
     date: "2025-03-20",
     time: "4:00 PM",
     venue: "Online",
@@ -48,6 +49,7 @@ export const eventsData = [
     id: 4,
     title: "Webinar on AI Ethics",
     section: "webinar",
+    tagline: "Ethical AI Systems",
     date: "2026-03-20",
     time: "4:00 PM",
     venue: "Online",
@@ -58,6 +60,6 @@ export const eventsData = [
     highlightPriority: 0,
   },
   {
-    
+
   }
 ];

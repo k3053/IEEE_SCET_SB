@@ -1,39 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaLinkedin } from "react-icons/fa";
 import VTS_logo from "../assets/VTS_logo.jpg";
-
-const vtsMembersData = [
-  {
-    name: "Anika Mehta",
-    role: "Chair - IEEE VTS Chapter",
-    department: "Computer Engineering",
-    image: "/src/assets/Members/VTS/V1.jpg",
-  },
-  {
-    name: "Vir Gupta",
-    role: "Vice Chair - IEEE VTS Chapter",
-    department: "Computer Engineering",
-    image: "/src/assets/Members/VTS/V2.jpg",
-  },
-  {
-    name: "Dhayeya Gandhi",
-    role: "Secretary - IEEE VTS Chapter",
-    department: "Electronics & Communication",
-    image: "/src/assets/Members/VTS/V3.jpg",
-  },
-  {
-    name: "Sahil Ariwala",
-    role: "Joint Secretary - IEEE VTS Chapter",
-    department: "Electronics & Communication",
-    image: "/src/assets/Members/VTS/V4.jpg",
-  },
-  {
-    name: "Shristi Shah",
-    role: "Treasurer - IEEE VTS Chapter",
-    department: "Electronics & Communication",
-    image: "/src/assets/Members/VTS/V5.jpg",
-  },
-];
+import { vtsMembersData } from "../data/Members";
 
 const VTS = () => {
   return (
@@ -70,43 +39,76 @@ const VTS = () => {
 
       {/* ===== Members Grid ===== */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 justify-items-center">
-        {vtsMembersData.map((member, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.04 }}
-            className="group bg-white rounded-2xl shadow-md hover:shadow-2xl 
-            transition-all duration-300 w-80"
-          >
-            {/* Accent Bar */}
-            <div className="h-2 bg-green-600 rounded-t-2xl"></div>
+        {vtsMembersData.map((member, index) => {
 
-            <div className="p-10 text-center">
+          const CardContent = (
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.04 }}
+              className="group bg-white rounded-2xl shadow-md 
+                hover:shadow-2xl hover:-translate-y-2 
+                transition-all duration-300 w-80 overflow-hidden cursor-pointer"
+            >
+              <div className="h-2 bg-green-600"></div>
 
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-40 h-40 mx-auto object-cover rounded-lg mb-6 
-                transition duration-300 grayscale group-hover:grayscale-0"
-              />
+              <div className="p-10 text-center">
 
-              <h2 className="text-xl font-semibold text-gray-800">
-                {member.name}
-              </h2>
+                <div className="relative w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden">
 
-              <p className="text-green-700 font-medium mt-2 text-sm uppercase tracking-wide">
-                {member.role}
-              </p>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover 
+                      transition duration-500 ease-in-out 
+                      group-hover:scale-110"
+                  />
 
-              <div className="mt-4 inline-block bg-green-50 text-green-700 text-xs px-4 py-2 rounded-full">
-                {member.department}
+                  {member.linkedin && (
+                    <div className="absolute inset-0 bg-black/30 
+                      opacity-0 group-hover:opacity-100 
+                      transition duration-300 flex items-center justify-center">
+
+                      <FaLinkedin className="text-white text-4xl 
+                        opacity-0 group-hover:opacity-100 
+                        transition duration-300" />
+                    </div>
+                  )}
+
+                </div>
+
+                <h2 className="text-xl font-semibold text-gray-800">
+                  {member.name}
+                </h2>
+
+                <p className="text-green-700 font-medium mt-2 text-sm uppercase tracking-wide">
+                  {member.role}
+                </p>
+
+                <div className="mt-4 inline-block bg-green-50 text-green-700 text-xs px-4 py-2 rounded-full">
+                  {member.department}
+                </div>
+
               </div>
+            </motion.div>
+          );
 
+          return member.linkedin ? (
+            <a
+              key={member.name}
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {CardContent}
+            </a>
+          ) : (
+            <div key={member.name}>
+              {CardContent}
             </div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
