@@ -26,7 +26,7 @@ const highlightEvents = getHighlightEvents(eventsData);
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-10">
-          {highlightEvents.slice(0, 3).map((event, index) => (
+          {highlightEvents.map((event, index) => (
             <motion.div
               key={event.id}
               initial={{ opacity: 0, y: 40 }}

@@ -71,11 +71,12 @@ const Cs = () => {
                   {member.linkedin && (
                     <div className="absolute inset-0 bg-black/30 
                       opacity-0 group-hover:opacity-100 
-                      transition duration-300 flex items-center justify-center">
-
-                      <FaLinkedin className="text-white text-4xl 
-                        opacity-0 group-hover:opacity-100 
-                        transition duration-300" />
+                      transition duration-300"
+                    >
+                    <FaLinkedin className="absolute bottom-3 right-3 text-white text-3xl 
+                      opacity-0 group-hover:opacity-100 
+                      transition duration-300"
+                    />
                     </div>
                   )}
 

@@ -10,7 +10,7 @@ import FinalCTASection from '../components/Membership/cta';
 
 const MembershipDetails = () => {
   return (
-    <div className="container mx-auto py-16 px-6 md:px-20">
+    <div className="container mx-auto ">
       {/* <h1 className="text-3xl font-bold">IEEE Membership Details</h1>
       <p className="mt-4">Join IEEE SCET SB to participate in various events, get access to resources, and grow your professional network.</p>
       <ul className="list-disc ml-10 mt-4">

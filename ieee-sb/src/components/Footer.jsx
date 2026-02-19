@@ -3,7 +3,7 @@ import SocialMediaLink from "../components/SocialMediaLink";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-600 text-white py-14">
+    <footer className="bg-blue-700 text-white py-14">
 
       {/* ===== KEEPING YOUR SVG EFFECT CSS EXACTLY SAME ===== */}
       <style>{`

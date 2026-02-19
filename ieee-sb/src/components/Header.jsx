@@ -17,7 +17,7 @@ const Header = () => {
   ];
 
   return (
-    <nav className="bg-blue-600/95 text-white px-6 lg:px-8 h-[80px] shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-white/20">
+    <nav className="bg-blue-700/95 text-white px-6 lg:px-8 h-[80px] shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-white/20">
 
       <div className="max-w-7xl mx-auto h-full flex justify-between items-center">
 
