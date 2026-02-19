@@ -2,25 +2,20 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { eventsData } from "../../data/eventsData";
+import { getPastEvents } from "../../utils/eventUtils";
 
 const PastEventsSection = () => {
   const navigate = useNavigate();
 
-  // Convert event date string to Date object safely
-  const parseDate = (dateString) => {
-    return new Date(dateString);
-  };
-
-  // Filter past events
-  const pastEvents = eventsData.filter(
-    (event) => parseDate(event.date) < new Date()
-  );
+  // ✅ Use centralized utility
+  const pastEvents = getPastEvents(eventsData);
 
   if (pastEvents.length === 0) return null;
 
   return (
     <section className="py-24 px-6 md:px-16 bg-blue-50">
       <div className="max-w-7xl mx-auto text-center">
+
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,14 +38,17 @@ const PastEventsSection = () => {
               onClick={() => navigate(`/event/${event.id}`)}
               className="cursor-pointer bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 p-8 text-left border border-gray-100"
             >
+              {/* Date */}
               <div className="mb-4 text-sm text-blue-600 font-medium">
                 {event.date}
               </div>
 
+              {/* Title */}
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">
                 {event.title}
               </h3>
 
+              {/* Description */}
               <p className="text-gray-600 leading-relaxed">
                 {event.description.length > 120
                   ? event.description.substring(0, 120) + "..."
@@ -59,6 +57,7 @@ const PastEventsSection = () => {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { eventsData } from "../data/eventsData";
+import { getUpcomingEvents } from "../utils/eventUtils";
 
 const UpcomingEvents = () => {
   const navigate = useNavigate();
 
-  const sortedEvents = [...eventsData].sort(
-    (a, b) => new Date(a.date) - new Date(b.date)
-  );
+  // ✅ Get only upcoming events (sorted)
+  const upcomingEvents = getUpcomingEvents(eventsData);
 
   // 🎨 Section Styling Configuration
   const sectionStyles = {
@@ -44,13 +44,21 @@ const UpcomingEvents = () => {
         <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
       </div>
 
+      {/* If no upcoming events */}
+      {upcomingEvents.length === 0 && (
+        <div className="text-center text-gray-500 text-lg">
+          No upcoming events at the moment.
+        </div>
+      )}
+
       {/* Timeline */}
       <div className="relative max-w-6xl mx-auto">
         <div className="hidden md:block absolute left-1/2 top-0 transform -translate-x-1/2 w-1 bg-blue-200 h-full rounded-full"></div>
 
-        {sortedEvents.map((event, index) => {
+        {upcomingEvents.map((event, index) => {
           const style =
-            sectionStyles[event.section] || sectionStyles["technical"];
+            sectionStyles[event.section?.toLowerCase()] ||
+            sectionStyles["technical"];
 
           return (
             <div
