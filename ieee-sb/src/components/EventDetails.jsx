@@ -2,108 +2,93 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { eventsData } from "../data/eventsData";
-import { getEventById } from "../utils/eventUtils";
 
 const EventDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const event = getEventById(eventsData, id);
+  // Convert id to number for safe matching
+  const event = eventsData.find(
+    (e) => e.id === Number(id)
+  );
 
   if (!event) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-blue-50">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-red-500 mb-4">
-            Event Not Found
-          </h1>
-          <button
-            onClick={() => navigate("/events")}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-          >
-            Back to Events
-          </button>
-        </div>
+        <h1 className="text-3xl font-semibold text-gray-700">
+          Event Not Found
+        </h1>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 py-16 px-6 md:px-20">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
 
-        {/* Image */}
+        {/* ================= Poster ================= */}
         {event.image && (
-          <motion.img
-            src={event.image}
-            alt={event.title}
-            initial={{ opacity: 0, y: 30 }}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="w-full h-80 object-cover rounded-3xl shadow-lg mb-8"
-          />
+            className="flex justify-center mb-12"
+          >
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full max-w-3xl h-auto object-contain rounded-2xl shadow-2xl border border-gray-200 bg-white"
+            />
+          </motion.div>
         )}
 
-        {/* Title */}
-        <motion.h1
+        {/* ================= Title Section ================= */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-blue-700 mb-4"
         >
-          {event.title}
-        </motion.h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-700 mb-3">
+            {event.title}
+          </h1>
 
-        {/* Tagline */}
-        {event.tagline && (
-          <p className="text-gray-600 italic mb-6">
-            {event.tagline}
-          </p>
-        )}
-
-        {/* Meta Info */}
-        <div className="flex flex-wrap gap-3 mb-6">
-          {event.department && (
-            <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">
-              {event.department}
-            </span>
+          {event.tagline && (
+            <p className="text-lg italic text-gray-600 mb-8">
+              {event.tagline}
+            </p>
           )}
+        </motion.div>
 
-          {event.section && (
-            <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm capitalize">
-              {event.section}
-            </span>
-          )}
+        {/* ================= Event Information Card ================= */}
+        <div className="bg-white shadow-xl rounded-2xl p-8 border border-gray-100 mb-10">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
 
-          {event.date && (
-            <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">
-              📅 {event.date}
-            </span>
-          )}
+            <p><strong>📅 Date:</strong> {event.date}</p>
+            <p><strong>⏰ Time:</strong> {event.time}</p>
+            <p><strong>📍 Venue:</strong> {event.venue}</p>
+            <p><strong>🏢 Department:</strong> {event.department}</p>
+            <p><strong>📂 Section:</strong> {event.section}</p>
 
-          {event.time && (
-            <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">
-              ⏰ {event.time}
-            </span>
-          )}
-
-          {event.venue && (
-            <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">
-              📍 {event.venue}
-            </span>
-          )}
+          </div>
         </div>
 
-        {/* Description */}
-        <p className="text-gray-700 leading-relaxed text-lg">
-          {event.description}
-        </p>
+        {/* ================= Description ================= */}
+        {event.description && (
+          <div className="bg-white shadow-md rounded-2xl p-8 border border-gray-100 mb-12">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              About the Event
+            </h2>
+            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+              {event.description}
+            </p>
+          </div>
+        )}
 
-        {/* Back Button */}
-        <div className="mt-10">
+        {/* ================= Back Button ================= */}
+        <div className="text-center">
           <button
             onClick={() => navigate(-1)}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white px-8 py-3 rounded-xl shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300"
           >
             ← Go Back
           </button>

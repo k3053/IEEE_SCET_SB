@@ -128,8 +128,8 @@ const UpcomingEvents = () => {
               <div
                 key={event.id}
                 className={`relative mb-24 flex items-center w-full ${index % 2 === 0
-                    ? "md:justify-start"
-                    : "md:justify-end"
+                  ? "md:justify-start"
+                  : "md:justify-end"
                   } justify-center`}
               >
                 {/* Card */}
@@ -166,11 +166,10 @@ const UpcomingEvents = () => {
                   )}
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm">
-                    {event.description?.length > 100
-                      ? event.description.substring(0, 100) + "..."
-                      : event.description}
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {event.description}
                   </p>
+
                 </div>
 
                 {/* Timeline Dot */}

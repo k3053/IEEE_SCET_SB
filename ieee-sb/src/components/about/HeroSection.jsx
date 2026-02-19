@@ -16,7 +16,7 @@ const HeroSection = () => {
           alt="IEEE SCET SB Banner"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-blue-800/20"></div>
 
         <motion.div
           initial="hidden"

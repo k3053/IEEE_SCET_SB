@@ -6,7 +6,7 @@ import About from "./pages/About";
 import Chapters from "./pages/Chapters";
 import ExecomMembers from "./pages/ExecomMembers";
 import UpcomingEvents from "./pages/UpcomingEvents";
-import EventDetails from "./pages/EventDetails";   // ✅ MISSING IMPORT (FIXED)
+import EventDetails from "./components/EventDetails";   // ✅ MISSING IMPORT (FIXED)
 import SocialMedia from "./pages/SocialMedia";
 import MembershipDetails from "./pages/MembershipDetails";
 

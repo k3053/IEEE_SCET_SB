@@ -14,14 +14,14 @@ export const execomData = [
     role: "Chair IEEE SCET SB", 
     department: "Computer Engineering", 
     image: E1,
-    linkedin: "https://linkedin.com/in/example1"
+    linkedin: "https://linkedin.com/in/masoomparekh"
   },
   { 
     name: "Ved Kapadia", 
     role: "Vice Chair IEEE SCET SB", 
     department: "Electronics & Communication", 
     image: E2,
-    linkedin: "https://linkedin.com/in/example2"
+    linkedin: "https://linkedin.com/in/ved-kapadia"
   },
   { 
     name: "Aryan Sariya", 
@@ -35,41 +35,41 @@ export const execomData = [
     role: "Secretary IEEE SCET SB", 
     department: "Electronics & Communication", 
     image: E4,
-    linkedin: "https://linkedin.com/in/example4" 
+    linkedin: "https://linkedin.com/in/anushka-goyal-18494831b" 
   },
   { 
     name: "Dev Patel", 
     role: "Joint Secretary IEEE SCET SB", 
     department: "Computer Engineering", 
     image: E5,
-    linkedin: "https://linkedin.com/in/example5" 
+    linkedin: "https://linkedin.com/in/dev-patel-3641532b7" 
   },
   { 
     name: "Vir Gupta", 
     role: "Treasurer IEEE SCET SB", 
     department: "Computer Engineering", 
     image: E6,
-    linkedin: "https://linkedin.com/in/example6" 
+    linkedin: "https://linkedin.com/in/vir-gupta-364960293" 
   },
   { 
     name: "Dhwanil Doshi", 
     role: "Membership Development Chair IEEE SCET SB", 
     department: "Electronics & Communication", 
     image: E7,
-    linkedin: "https://linkedin.com/in/example7"
+    linkedin: "https://linkedin.com/in/dhwanil-doshi"
   },
   { 
     name: "Chharvvi Batra", 
     role: "Graphics Lead IEEE SCET SB", 
     department: "Electronics & Communication", 
     image: E8,
-    linkedin: "https://linkedin.com/in/example8"
+    linkedin: "https://linkedin.com/in/chharvvi-batra-5635182a1"
   },
   { 
     name: "Bhavya Ladumor", 
     role: "Technical Lead IEEE SCET SB", 
     department: "Information Technology", 
     image: E9,
-    linkedin: "https://linkedin.com/in/example9" 
+    linkedin: "https://linkedin.com/in/bhavya-ladumor" 
   },
 ];
