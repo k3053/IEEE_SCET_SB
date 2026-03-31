@@ -29,7 +29,7 @@ const Header = () => {
             className="h-[65%] object-contain"
           />
           <span className="text-xl md:text-2xl font-bold tracking-wide">
-            IEEE SCET SB
+            IEEE SCET
           </span>
         </Link>
 

@@ -39,7 +39,7 @@ The event strengthened collaboration between academia and industry while reinfor
     venue: "EC-AV Room, SCET Campus",
     description:
       "A three-day seasonal school focusing on wearable healthcare technologies, featuring expert talks, industrial visits, and hands-on workshops on AI-driven thermal imaging, Bluetooth ECG, telemedicine systems, EEG signal analysis, and smart wearable innovations.",
-    image: "/src/assets/Posters/SeasonalSchool2k24.jpg",
+    image: "/Posters/SeasonalSchool2k24.jpg",
     isHighlight: true,
     highlightPriority: 2,
   },
@@ -54,7 +54,7 @@ The event strengthened collaboration between academia and industry while reinfor
     venue: "Online (Google Meet)",
     description:
       "Data Science Challenge - 1.0 was a two-day national-level project competition organized by Sarvajanik College of Engineering and Technology in association with IEEE SPS SCET SBC, IEEE SCET Student Branch, and IEEE SPS Gujarat Section. The competition focused on Signal Processing and Image Processing domains. Teams (maximum 3 members with 1 mentor) competed across three rounds: a 3-minute video submission round, a 6-hour semi-final coding round, and a final presentation round before eminent jury members. A total of 27 teams (108 participants) registered nationwide, 18 teams qualified for the semi-final, and 12 teams reached the final round. Winners were awarded cash prizes up to Rs. 11,000 along with certificates of recognition. The event emphasized forecasting, biomedical signal classification, optical character recognition, and digital image security applications.",
-    image: "/src/assets/Posters/DSC1.jpg",
+    image: "/Posters/DSC1.jpg",
     isHighlight: true,
     highlightPriority: 3,
   },

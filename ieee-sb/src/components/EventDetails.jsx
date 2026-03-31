@@ -22,7 +22,7 @@ const EventDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 py-16 px-6 md:px-16 lg:px-24">
+    <div className="min-h-screen bg-gradient-to-b from-blue-400 via-white to-blue-400 py-20 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
 
         {/* ================= Main Layout ================= */}

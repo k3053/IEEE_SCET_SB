@@ -1,18 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useResponsive } from "./utils/useResponsive"; // ✅ ADD THIS
 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Chapters from "./pages/Chapters";
 import ExecomMembers from "./pages/ExecomMembers";
 import UpcomingEvents from "./pages/UpcomingEvents";
-import EventDetails from "./components/EventDetails";   // ✅ MISSING IMPORT (FIXED)
+import EventDetails from "./pages/EventDetails";
 import SocialMedia from "./pages/SocialMedia";
 import MembershipDetails from "./pages/MembershipDetails";
+import ScrollToTop from "./utils/ScrollToTop";
 
 import Cs from "./Chapters/Cs";
-import Wie from "./Chapters/Wie";   // ⚠ Make sure file name matches exactly
-import VTS from "./Chapters/Vts";   // ⚠ Match casing with file name
+import Wie from "./Chapters/Wie";
+import VTS from "./Chapters/Vts";
 import Sps from "./Chapters/Sps";
 import Sight from "./Chapters/Sight";
 
@@ -20,11 +22,17 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
+
+  const screen = useResponsive(); // ✅ USE HOOK
+
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100 flex flex-col">
+      <ScrollToTop />
+
+      {/* ✅ Add screen class dynamically */}
+      <div className={`min-h-screen bg-gray-100 flex flex-col ${screen}`}>
         
-        <Header />
+        <Header screen={screen} /> {/* 🔥 Optional: pass to components */}
 
         <main className="flex-grow">
           <Routes>
@@ -59,7 +67,7 @@ function App() {
           </Routes>
         </main>
 
-        <Footer />
+        <Footer screen={screen} /> {/* 🔥 Optional */}
       </div>
     </Router>
   );

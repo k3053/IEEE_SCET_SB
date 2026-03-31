@@ -7,33 +7,60 @@ import { getHighlightEvents } from "../../utils/eventUtils";
 const HighlightsSection = () => {
   const navigate = useNavigate();
 
-  // ✅ Get only upcoming highlighted events (sorted by priority)
-const highlightEvents = getHighlightEvents(eventsData);
+  const highlightEvents = getHighlightEvents(eventsData);
 
+  // 🔥 Parent container animation (stagger effect)
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  // 🔥 Card animation
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  // 🔥 Title animation
+  const titleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <section className="py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
 
+        {/* Section Title */}
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
           className="text-4xl font-bold text-blue-700 mb-16"
         >
           Our Highlights
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {highlightEvents.map((event, index) => (
+        {/* Cards Grid */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          {highlightEvents.map((event) => (
             <motion.div
               key={event.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.03 }}
+              variants={cardVariants}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.04 }}
               onClick={() => navigate(`/event/${event.id}`)}
               className="cursor-pointer bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden"
             >
@@ -66,7 +93,7 @@ const highlightEvents = getHighlightEvents(eventsData);
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

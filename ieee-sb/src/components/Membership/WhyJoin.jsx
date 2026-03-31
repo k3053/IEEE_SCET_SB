@@ -42,7 +42,7 @@ const WhyJoinSection = () => {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-gray-800">
-          Why Join IEEE SCET SB?
+          Why Join IEEE ?
         </h2>
         <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
       </motion.div>
